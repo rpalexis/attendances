@@ -18,7 +18,7 @@ class Niveau(models.Model):
 	nomNiveau = models.CharField(max_length=50,unique=True)
 	domaine = models.ForeignKey('Domaine')
 	def __str__(self):
-		return self.nomNiveau+","+self.domaine
+		return self.nomNiveau+","+self.domaine.nomDomaine
 
 class Anneeacademique(models.Model):
 	debutAnnee = models.IntegerField()
@@ -29,14 +29,14 @@ class Anneeacademique(models.Model):
 		)
 	estActuel = models.CharField(max_length=5,choices=chxActuel)
 	def __str__(self):
-		return self.debutAnnee+"/"+self.finAnnee
+		return str(self.debutAnnee)+"/"+str(self.finAnnee)
 
 
 class Promotion(models.Model):
 	niveau = models.ForeignKey('Niveau')
 	anneeacademique = models.ForeignKey('Anneeacademique')
 	def __str__(self):
-		return self.niveau+":"+self.anneeacademique
+		return self.niveau.nomNiveau+":"+str(self.anneeacademique.debutAnnee)+"/"+str(self.anneeacademique.finAnnee)
 
 
 class Etudiant(models.Model):
@@ -63,7 +63,8 @@ class Professeur(models.Model):
 
 class Matiere(models.Model):
 	nomMatiere = models.CharField(max_length=50)
-
+	def __str__(self):
+		return self.nomMatiere
 
 class Horaire(models.Model):
 	#(jourMatiere,Matieres,professeur,promotion)
