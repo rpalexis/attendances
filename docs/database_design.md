@@ -37,24 +37,32 @@ Parmis les fonctionnalites proposees:
 		-> Faire des CRUD sur les diferents entites
 
 ==============================================================================================================================
-PRESENTATION DES ENTITES
+PRESENTATION DES ENTITES & RELATIONS
 ==============================================================================================================================
 		[] SALLES
 			(nomSalle) #On prend uniquement le nom de la salle(salle physique) Ex: Salle7 ect
 		[] AnneeAcademique
-			(nomAnnee,currentYear)#currentYear: Est un tag boolean qui sera utilise pour connaitre l'annee academique courante(Exemple: 2014/2015)
+			(debutAnnee,finAnnee,current)#a boolean to know the current academic's year
 		[] Domaine # Prendre en compte les domaines disponible a l'ecole# (Info, Gestion, Comptabilite, Genie)
 			(nomDomaine)
 		[] Niveau
-			(anneCourant,niveau)
+			(nomNiveau)
 		[] Matieres
-			(nomMatiere)
+			(nomMatiere)#Entite en relation avec Horaire
 		[] Professeurs
-			(nom,prenom,email,telephone1,telephone2)
+			(nom,prenom,email,telephone1,telephone2)#Entite en relation avec Horaire
 		[] Horaire
 			(jourMatiere,Matieres,professeur,promotion)
 		[] Etudiant 
 			(nom,prenom,email,telephone1,telephone2,promotion)
+
+
+		[] Promotion (#Entite creant une liaison entre les entites Niveau et AnneeAcademique)
+					  #Les entites Horaires, Etudiant, Salle seront en relation directe avec elle
+					  # Ceci pour suivre l'evolution des entites pre-citees a travers les annees academiques
+
+
+
 
 ==============================================================================================================================
 ISSUES
