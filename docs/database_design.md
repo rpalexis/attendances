@@ -43,7 +43,9 @@ PRESENTATION DES ENTITES
 			(nomSalle) #On prend uniquement le nom de la salle(salle physique) Ex: Salle7 ect
 		[] AnneeAcademique
 			(nomAnnee,currentYear)#currentYear: Est un tag boolean qui sera utilise pour connaitre l'annee academique courante(Exemple: 2014/2015)
-		[] Promotion
+		[] Domaine # Prendre en compte les domaines disponible a l'ecole# (Info, Gestion, Comptabilite, Genie)
+			(nomDomaine)
+		[] Niveau
 			(anneCourant,niveau)
 		[] Matieres
 			(nomMatiere)
