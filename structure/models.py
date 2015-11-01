@@ -55,7 +55,6 @@ class Professeur(models.Model):
 	prenom =  models.CharField(max_length=50)
 	email = models.EmailField(max_length=254,unique=True)
 	telephone = models.CharField(max_length=15,unique=True)
-	promotion = models.ManyToManyField(Promotion)
 
 	def __str__(self):
 		return self.prenom+" "+self.nom
@@ -78,6 +77,8 @@ class Horaire(models.Model):
 			("7","Dimanche"),
 		)
 	jourMatiere = models.CharField(max_length=5,choices=jour)
+	heureDebut = models.TimeField(auto_now=False, auto_now_add=False)
+	heureFin = models.TimeField(auto_now=False, auto_now_add=False)
 	matiere = models.ForeignKey('Matiere')
 	professeur = models.ForeignKey('Professeur')
 	promotion = models.ForeignKey('Promotion')
