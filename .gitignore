@@ -1,2 +1,3 @@
 #Preventing commiting migration's files
 **/migrations
+.pyc
