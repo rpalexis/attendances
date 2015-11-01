@@ -16,7 +16,7 @@ class Domaine(models.Model):
 
 class Niveau(models.Model):
 	nomNiveau = models.CharField(max_length=50,unique=True)
-	domaine = ForeignKey('Domaine')
+	domaine = models.ForeignKey('Domaine')
 	def __str__(self):
 		return self.nomNiveau+","+self.domaine
 
@@ -33,8 +33,8 @@ class Anneeacademique(models.Model):
 
 
 class Promotion(models.Model):
-	niveau = ForeignKey('Niveau')
-	anneeacademique = ForeignKey('Anneeacademique')
+	niveau = models.ForeignKey('Niveau')
+	anneeacademique = models.ForeignKey('Anneeacademique')
 	def __str__(self):
 		return self.niveau+":"+self.anneeacademique
 
@@ -84,5 +84,6 @@ class Horaire(models.Model):
 
 class Salle(models.Model):
 	nomSalle = models.CharField(max_length=15)
+	promotion = models.ManyToManyField(Promotion)
 	def __str__(self):
 		return self.nomSalle
