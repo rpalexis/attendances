@@ -86,6 +86,12 @@ class Horaire(models.Model):
 
 class Salle(models.Model):
 	nomSalle = models.CharField(max_length=15)
-	promotion = models.ManyToManyField(Promotion)
 	def __str__(self):
 		return self.nomSalle
+
+class UsageSalle(models.Model):
+	salle = models.ForeignKey('Salle')
+	promotion = models.ForeignKey('Promotion')
+
+	def __str__(self):
+		return self.salle.nomSalle
