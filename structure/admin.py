@@ -38,6 +38,9 @@ class HoraireAdmin(admin.ModelAdmin):
 class SalleAdmin(admin.ModelAdmin):
 	pass
 
+class UsageSalleAdmin(admin.ModelAdmin):
+	pass
+
 
 admin.site.register(Domaine,DomainAdmin)
 admin.site.register(Niveau,NiveauAdmin)
@@ -48,3 +51,4 @@ admin.site.register(Professeur,ProfesseurAdmin)
 admin.site.register(Matiere,MatiereAdmin)
 admin.site.register(Horaire,HoraireAdmin)
 admin.site.register(Salle,SalleAdmin)
+admin.site.register(UsageSalle,UsageSalleAdmin)
