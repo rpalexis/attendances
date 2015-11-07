@@ -42,6 +42,10 @@ class UsageSalleAdmin(admin.ModelAdmin):
 	pass
 
 
+class AppartenanceAdmin(admin.ModelAdmin):
+	pass
+
+Appartenance
 admin.site.register(Domaine,DomainAdmin)
 admin.site.register(Niveau,NiveauAdmin)
 admin.site.register(Anneeacademique,AnneeacademiqueAdmin)
@@ -52,3 +56,4 @@ admin.site.register(Matiere,MatiereAdmin)
 admin.site.register(Horaire,HoraireAdmin)
 admin.site.register(Salle,SalleAdmin)
 admin.site.register(UsageSalle,UsageSalleAdmin)
+admin.site.register(Appartenance,AppartenanceAdmin)

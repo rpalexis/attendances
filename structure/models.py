@@ -44,11 +44,15 @@ class Etudiant(models.Model):
 	prenom =  models.CharField(max_length=50)
 	email = models.EmailField(max_length=254,unique=True)
 	telephone = models.CharField(max_length=15,unique=True)
-	promotion = models.ManyToManyField(Promotion)
 
 	def __str__(self):
 		return self.prenom+" "+self.nom
 
+
+class Appartenance(models.Model):
+	etudiant =  models.ForeignKey('Etudiant')
+	promotion = models.ForeignKey('Promotion')
+	
 
 class Professeur(models.Model):
 	nom =  models.CharField(max_length=50)
