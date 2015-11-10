@@ -75,3 +75,18 @@ ISSUES
 en tenant compte des differentes annees academiques.
 	[R]:Introduire une table ANNEE_ACADEMIK aiderait. Ce qui aurait une relation avec la table promotion
 [] Feat: La presence du professeur sera confirme grace a un mecanisme bizard. la moitie d'un code sera partager entre les professeurs et les etudiants pour s'assurer que les cours ont ete tenue.
+
+==============================================================================================================================
+Index Functionnalities
+==============================================================================================================================
+
+ --> For the admin
+ In the dashboard, see things like:
+       Horaire du Jour par promotion
+       MSG_SENders
+       Link to Add content
+       Link to See Horaire par promotion
+
+--> For Students and Prof
+		See Their Schedule
+		MSG_Senders
