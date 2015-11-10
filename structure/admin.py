@@ -4,15 +4,15 @@ from structure.models import *
 # Register your models here.
 
 class DomainAdmin(admin.ModelAdmin):
-	pass
+	list_display = ('nomDomaine',)
 
 
 class NiveauAdmin(admin.ModelAdmin):
-	pass
+	list_display = ('nomNiveau','domaine',)
 
 
 class AnneeacademiqueAdmin(admin.ModelAdmin):
-	pass
+	list_display = ('debutAnnee','finAnnee',)
 
 
 class PromotionAdmin(admin.ModelAdmin):
@@ -45,7 +45,7 @@ class UsageSalleAdmin(admin.ModelAdmin):
 class AppartenanceAdmin(admin.ModelAdmin):
 	pass
 
-Appartenance
+
 admin.site.register(Domaine,DomainAdmin)
 admin.site.register(Niveau,NiveauAdmin)
 admin.site.register(Anneeacademique,AnneeacademiqueAdmin)
