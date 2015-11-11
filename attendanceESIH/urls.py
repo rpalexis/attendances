@@ -18,4 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'', include(admin.site.urls)),
+    url(r'^grappelli/', include('grappelli.urls')),
 ]
